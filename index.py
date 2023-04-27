@@ -1,15 +1,15 @@
 import tkinter as tk
 from PIL import ImageTk, Image
-from chave import chave1, chave2
+from chave import chave, chave1, chave2
 
 def botao_clicado():
-    chave1(gemas_var.get(), bp_var.get(), revive_var.get())
+    chave(chave1, gemas_var.get(), bp_var.get(), revive_var.get())
 
 def botao_clicado2():
-    chave2(gemas_var.get(), bp_var.get(), revive_var.get())
+    chave(chave2, gemas_var.get(), bp_var.get(), revive_var.get())
 
 janela = tk.Tk()
-janela.geometry("300x200")
+janela.geometry("300x600")
 janela.title("Exemplo de botão")
 
 # Criar as variáveis das checkboxes
