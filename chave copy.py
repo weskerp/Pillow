@@ -1,6 +1,5 @@
 import pyautogui
 import time
-import keyboard
 from PIL import Image
 
 
@@ -60,16 +59,12 @@ def chave(arena, gemas, bp, revive):
     # Clica no primeiro ponto
     pyautogui.moveTo(669, 479)
     pyautogui.rightClick()
+    pyautogui.click()
+    # Espera um segundo para a tela atualizar
     time.sleep(1)
-    # cont = 0
-    # while cont < 100:
-    #     cont = cont + 1
-    #     keyboard.press('e')
-    keyboard.press('e')
-    time.sleep(2)
-    keyboard.send('e')
-    pyautogui.keyDown('e')
-    pyautogui.keyUp('e')
+    pyautogui.moveTo(760, 323)
+    pyautogui.click()
+
     arena()
 
     
