@@ -6,9 +6,10 @@ from dxd import *
 from comandos_teste import teste
 from janela_mae import *
 from DGs.DX.morada_das_chamas_desperto import morada_desperta
+from DGs.DXD.locomotivaLouca import locomotivaLoucaDesperta
 
-def botao_moinho():
-    chave(bp_var.get(), mula_var.get())
+def botao_locomotiva_louca_desperta():
+    locomotivaLoucaDesperta(bp_var.get(), mula_var.get())
 
 def botao_posto():
     posto(gemas_var.get(), bp_var.get(), mula_var.get())
@@ -37,9 +38,9 @@ bp_cb = tk.Checkbutton(janela_dxd, text="BP", variable=bp_var)
 mula = tk.Checkbutton(janela_dxd, text="mula", variable=mula_var)
 
 # Abrir a imagem a ser usada no botão
-imgmoinho = Image.open(caminho + "\\imgs\\botoes\\moinho.png")
-imgmoinho = imgmoinho.resize((100, 100)) # definir o tamanho da imagem
-imgmoinho = ImageTk.PhotoImage(imgmoinho)
+imglocomotiva_louca_desperta = Image.open(caminho + "\\imgs\\botoes\\trem_d.png")
+imglocomotiva_louca_desperta = imglocomotiva_louca_desperta.resize((100, 100)) # definir o tamanho da imagem
+imglocomotiva_louca_desperta = ImageTk.PhotoImage(imglocomotiva_louca_desperta)
 
 imgposto = Image.open(caminho + "\\imgs\\botoes\\posto.png")
 imgposto = imgposto.resize((100, 100)) # definir o tamanho da imagem
@@ -58,8 +59,8 @@ img_catacumba_desperta = img_catacumba_desperta.resize((100, 100)) # definir o t
 img_catacumba_desperta = ImageTk.PhotoImage(img_catacumba_desperta)
 
 # Criar o botão
-btn_chave1 = tk.Button(janela_dxd, image=imgmoinho, command=botao_moinho)
-btn_chave1.image = imgmoinho # Salvar a referência da imagem para evitar o garbage collection
+btn_chave1 = tk.Button(janela_dxd, image=imglocomotiva_louca_desperta, command=botao_locomotiva_louca_desperta)
+btn_chave1.image = imglocomotiva_louca_desperta # Salvar a referência da imagem para evitar o garbage collection
 btn_chave1.grid(row=6, column=0)
 
 btn_chave2 = tk.Button(janela_dxd, image=imgposto, command=botao_posto)

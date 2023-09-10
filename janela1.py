@@ -9,6 +9,7 @@ from DGs.ilhaProibida import ilhaProibida
 from DGs.altarSiena1SS import altarSiena1SS
 from DGs.castelo_das_ilusoes import castelo_das_ilusoes
 from DGs.b1f import b1f
+# from DGs.b2f import b2f
 
 def botao_moinho():
     chave(bp_var.get(), mula_var.get())
