@@ -32,18 +32,9 @@ def teste():
     pyautogui.moveTo(669, 479)
     time.sleep(1)
     pyautogui.rightClick()
-    if tem_monstro_especifico(boss):
-        matar_boss("bm3")
-    quebrar_bau("reliquia")
-    andar_frente(5)
-    andar_frente(3)
-    andar_esquerda_frente(3)
-    andar_direita_frente(8)
-    andar_frente(3)
-    andar_direita(2)
-    andar_direita_frente(3)
-    andar_direita(3)
-    andar_tras(2)
+    
+    
+     
     
     
     # entrar_canal_5()
