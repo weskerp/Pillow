@@ -34,7 +34,18 @@ def teste():
     pyautogui.rightClick()
     
     
-     
+    
+    matar_boss('nobm')
+    andar_direita(5)
+    andar_tras(2)
+    andar_direita(3)
+    matar_monstro_ate_boss()
+    matar_boss('nobm')
+    andar_direita(2)
+    andar_esquerda(0.5)
+    andar_tras(6)
+
+
     
     
     # entrar_canal_5()
