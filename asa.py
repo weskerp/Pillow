@@ -68,7 +68,7 @@ def chave(bp, mula):
             
             andar_esquerda_frente(1.3)
             andar_esquerda(1.4)
-            andar_esquerda_tras(5.5)
+            andar_esquerda_tras(5.2)
             procurar_menino()
 
             keyboard.send('z')
