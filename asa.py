@@ -1,5 +1,3 @@
-import pyautogui
-import time
 from comandos import *
 
 def asa_caminho1():
@@ -68,9 +66,9 @@ def chave(bp, mula):
             time.sleep(0.5)
             quebrar_portao()
             
-            andar_esquerda_frente(1.4)
-            andar_esquerda(1.5)
-            andar_esquerda_tras(6)
+            andar_esquerda_frente(1.3)
+            andar_esquerda(1.4)
+            andar_esquerda_tras(5.5)
             procurar_menino()
 
             keyboard.send('z')

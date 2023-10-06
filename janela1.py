@@ -8,6 +8,7 @@ from janela_mae import *
 from DGs.ilhaProibida import ilhaProibida
 from DGs.altarSiena1SS import altarSiena1SS
 from DGs.castelo_das_ilusoes import castelo_das_ilusoes
+from DGs.salao_radiante_do_castelo_das_ilusoes import salao_radiante_do_castelo_das_ilusoes
 from DGs.b1f import b1f
 # from DGs.b2f import b2f
 
@@ -19,6 +20,9 @@ def botao_posto():
 
 def botao_castelo_das_ilusoes():
     castelo_das_ilusoes(gemas_var.get(), bp_var.get(),  mula_var.get())
+
+def botao_salao_radiante_do_castelo_das_ilusoes():
+    salao_radiante_do_castelo_das_ilusoes(gemas_var.get(), bp_var.get(),  mula_var.get())
 
 def botao_b1f():
     b1f(gemas_var.get(), bp_var.get(),  mula_var.get())
@@ -56,6 +60,10 @@ img_castelo_das_ilusoes = Image.open(caminho + "\\imgs\\botoes\\copia_apocalipse
 img_castelo_das_ilusoes = img_castelo_das_ilusoes.resize((100, 100)) # definir o tamanho da imagem
 img_castelo_das_ilusoes = ImageTk.PhotoImage(img_castelo_das_ilusoes)
 
+img_salao_radiante_do_castelo_das_ilusoes = Image.open(caminho + "\\imgs\\botoes\\apocalipse_dimensional.png")
+img_salao_radiante_do_castelo_das_ilusoes = img_salao_radiante_do_castelo_das_ilusoes.resize((100, 100)) # definir o tamanho da imagem
+img_salao_radiante_do_castelo_das_ilusoes = ImageTk.PhotoImage(img_salao_radiante_do_castelo_das_ilusoes)
+
 img_b1f = Image.open(caminho + "\\imgs\\botoes\\dragonaDosMortos.png")
 img_b1f = img_b1f.resize((100, 100)) # definir o tamanho da imagem
 img_b1f = ImageTk.PhotoImage(img_b1f)
@@ -81,9 +89,9 @@ btn_castelo_das_ilusoes = tk.Button(janela_1, image=img_castelo_das_ilusoes, com
 btn_castelo_das_ilusoes.image = img_castelo_das_ilusoes # Salvar a referência da imagem para evitar o garbage collection
 btn_castelo_das_ilusoes.grid(row=7, column=0)
 
-btn_b1f = tk.Button(janela_1, image=img_b1f, command=botao_b1f)
-btn_b1f.image = img_b1f # Salvar a referência da imagem para evitar o garbage collection
-btn_b1f.grid(row=7, column=1)
+btn_salao_radiante_do_castelo_das_ilusoes = tk.Button(janela_1, image=img_salao_radiante_do_castelo_das_ilusoes, command=botao_salao_radiante_do_castelo_das_ilusoes)
+btn_salao_radiante_do_castelo_das_ilusoes.image = img_salao_radiante_do_castelo_das_ilusoes # Salvar a referência da imagem para evitar o garbage collection
+btn_salao_radiante_do_castelo_das_ilusoes.grid(row=7, column=1)
 
 btn_ilhaProibida = tk.Button(janela_1, image=imgilhaProibida, command=botao_ilhaProibida)
 btn_ilhaProibida.image = imgilhaProibida # Salvar a referência da imagem para evitar o garbage collection
@@ -92,6 +100,10 @@ btn_ilhaProibida.grid(row=8, column=0)
 btn_altarSiena1SS = tk.Button(janela_1, image=imgAltarSiena1SS, command=botao_altarSiena1SS)
 btn_altarSiena1SS.image = imgAltarSiena1SS # Salvar a referência da imagem para evitar o garbage collection
 btn_altarSiena1SS.grid(row=8, column=1)
+
+btn_b1f = tk.Button(janela_1, image=img_b1f, command=botao_b1f)
+btn_b1f.image = img_b1f # Salvar a referência da imagem para evitar o garbage collection
+btn_b1f.grid(row=9, column=0)
 
 
 btn_teste = tk.Button(janela_1, command=teste)
