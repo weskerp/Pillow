@@ -1,44 +1,10 @@
 import tkinter as tk
 from PIL import ImageTk, Image
-from asa import *
-from posto import *
-from dxd import *
-from comandos_teste import teste
-from janela_mae import *
-from DGs.ilhaProibida import ilhaProibida
-from DGs.altarSiena1SS import altarSiena1SS
-from DGs.castelo_das_ilusoes_apocrifo import castelo_das_ilusoes_apocrifo
-from DGs.castelo_das_ilusoes import castelo_das_ilusoes
-from DGs.salao_radiante_do_castelo_das_ilusoes import salao_radiante_do_castelo_das_ilusoes
-from DGs.b1f import b1f
-from DGs.b2f import b2f
+from heil import heil
 
-def botao_moinho():
-    chave(bp_var.get(), mula_var.get())
+def botao1():
+    heil(botao_1())
 
-def botao_posto():
-    posto(gemas_var.get(), bp_var.get(), mula_var.get())
-
-def botao_castelo_das_ilusoes():
-    castelo_das_ilusoes(gemas_var.get(), bp_var.get(),  mula_var.get())
-
-def botao_salao_radiante_do_castelo_das_ilusoes():
-    salao_radiante_do_castelo_das_ilusoes(gemas_var.get(), bp_var.get(),  mula_var.get())
-
-def botao_b1f():
-    b1f(gemas_var.get(), bp_var.get(),  mula_var.get())
-
-def botao_b2f():
-    b2f(gemas_var.get(), bp_var.get(),  mula_var.get())
-
-def botao_ilhaProibida():
-    ilhaProibida(bp_var.get(),  mula_var.get())
-
-def botao_altarSiena1SS():
-    altarSiena1SS(bp_var.get(),  mula_var.get())
-
-def botao_c1d():
-    c1d(bp_var.get(),  mula_var.get())
 
 janela_1 = tk.Toplevel(janela)
 janela_1.geometry("300x600+850+50")  # Definir a posição da janela_1
@@ -75,10 +41,6 @@ img_b1f = Image.open(caminho + "\\imgs\\botoes\\dragonaDosMortos.png")
 img_b1f = img_b1f.resize((100, 100)) # definir o tamanho da imagem
 img_b1f = ImageTk.PhotoImage(img_b1f)
 
-img_b2f = Image.open(caminho + "\\imgs\\botoes\\dragonaDosMortosParte2.png")
-img_b2f = img_b2f.resize((100, 100)) # definir o tamanho da imagem
-img_b2f = ImageTk.PhotoImage(img_b2f)
-
 imgilhaProibida = Image.open(caminho + "\\imgs\\botoes\\BussulaIlhaProibida.png")
 imgilhaProibida = imgilhaProibida.resize((100, 100)) # definir o tamanho da imagem
 imgilhaProibida = ImageTk.PhotoImage(imgilhaProibida)
@@ -86,10 +48,6 @@ imgilhaProibida = ImageTk.PhotoImage(imgilhaProibida)
 imgAltarSiena1SS = Image.open(caminho + "\\imgs\\botoes\\s1.png")
 imgAltarSiena1SS = imgAltarSiena1SS.resize((100, 100)) # definir o tamanho da imagem
 imgAltarSiena1SS = ImageTk.PhotoImage(imgAltarSiena1SS)
-
-imgc1d = Image.open(caminho + "\\imgs\\botoes\\apocalipse_ilusivo_apocrifo.png")
-imgc1d = imgc1d.resize((100, 100)) # definir o tamanho da imagem
-imgc1d = ImageTk.PhotoImage(imgc1d)
 
 # Criar o botão
 btn_chave1 = tk.Button(janela_1, image=imgmoinho, command=botao_moinho)
@@ -120,17 +78,9 @@ btn_b1f = tk.Button(janela_1, image=img_b1f, command=botao_b1f)
 btn_b1f.image = img_b1f # Salvar a referência da imagem para evitar o garbage collection
 btn_b1f.grid(row=9, column=0)
 
-btn_b2f = tk.Button(janela_1, image=img_b2f, command=botao_b2f)
-btn_b2f.image = img_b2f # Salvar a referência da imagem para evitar o garbage collection
-btn_b2f.grid(row=9, column=1)
-
-btn_c1d = tk.Button(janela_1, image=imgc1d, command=botao_c1d)
-btn_c1d.image = imgc1d # Salvar a referência da imagem para evitar o garbage collection
-btn_c1d.grid(row=10, column=0)
-
 
 btn_teste = tk.Button(janela_1, command=teste)
-btn_teste.grid(row=11, column=1)
+btn_teste.grid(row=9, column=1)
 
 # Adicionar as checkboxes à janela_1
 gemas_cb.grid(row=0, column=0)

@@ -120,7 +120,7 @@ def chave(bp, mula):
                     time.sleep(0.5)
                 else:
                     break
-            matar_boss("bm3")
+            matar_boss("bm3", usar_hp=True)
             cancelar_bm()
             andar_esquerda_frente(2)
             quebrar_bau("bau")

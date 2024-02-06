@@ -2,6 +2,7 @@ import tkinter as tk
 from janelachaves import janela_chaves_esconder, janela_chaves_mostrar, janela_chave_fechar
 from janelaDxd import janela_dxd_mostrar, janela_dxd_esconder, janela_dxd_fechar
 from janela1 import janela_1_mostrar, janela_1_esconder, janela_1_fechar
+from janela2 import janela_2_mostrar, janela_2_esconder, janela_2_fechar
 from janelaDX import janela_dx_mostrar, janela_dx_esconder, janela_dx_fechar
 from janela_mae import *
 from up_sn_capella import up_sn
@@ -43,9 +44,21 @@ def janela_botoes():
     def fechar_janela_1():
         janela_1_esconder()
         janela.deiconify()
+    
+    def abrir_janela_2():
+        janela.withdraw()
+        janela_2_mostrar()
+        janela_2_fechar(fechar_janela_2)
+
+    def fechar_janela_2():
+        janela_2_esconder()
+        janela.deiconify()
 
     def upSnCapella():
         up_sn()
+        
+    def upSnCapellaFantasmas():
+        up_sn(fantasma = True)
     
     # Criar o botão
     btn_chave = tk.Button(janela, text="Chaves do Caos", command=abrir_janela_chave)
@@ -59,16 +72,22 @@ def janela_botoes():
 
     btn_dxd = tk.Button(janela, text="DGs 1", command=abrir_janela_1)
     btn_dxd.grid(row=1, column=1)
+    
+    btn_dxd = tk.Button(janela, text="DGs 1", command=abrir_janela_2)
+    btn_dxd.grid(row=2, column=0)
 
     # Espaço vazio na linha
     empty_label = tk.Label(janela)
-    empty_label.grid(row=2)
+    empty_label.grid(row=4)
 
     empty_label2 = tk.Label(janela)
-    empty_label2.grid(row=3)
+    empty_label2.grid(row=5)
 
     btnUpSn = tk.Button(janela, text="Upar em Sinelinea spot capella", bg="#66245b", command=upSnCapella)
-    btnUpSn.grid(row=4,  columnspan=2)
+    btnUpSn.grid(row=6,  columnspan=2)
+    
+    btnUpSn = tk.Button(janela, text="Upar em Sinelinea spot capella fantasmas", bg="#66245b", command=upSnCapellaFantasmas)
+    btnUpSn.grid(row=7,  columnspan=2)
     
     def atualizar_label():
         # Atualiza o texto da label com a nova saída da função map()
@@ -78,7 +97,7 @@ def janela_botoes():
         janela.after(50, atualizar_label)
 
     label = tk.Label(janela)
-    label.grid(row=5, column=1)
+    label.grid(row=9, column=1)
 
 # Chama a função para atualizar o texto da label pela primeira vez
     atualizar_label()

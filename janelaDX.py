@@ -9,6 +9,7 @@ from DGs.DX.morada_das_chamas_desperto import  morada_das_chamas
 from DGs.DX.caverda_do_panico import caverna_do_panico
 from DGs.DX.locomotivaLouca import locomotivaLouca
 from DGs.DX.catacumbaGelida import catacumbaGelida
+from DGs.DX.valeTempestuoso import vale_tempestuoso
 
 
 def botao_morada_das_chamas():
@@ -22,6 +23,9 @@ def botao_caverna_do_panico():
 
 def botao_locomotivaLouca():
     locomotivaLouca(bp_var.get(),  mula_var.get(), escolha.get())
+
+def botao_valeTempestuoso():
+    vale_tempestuoso(bp_var.get(),  mula_var.get(), escolha.get())
 
 janela_dx = tk.Toplevel(janela)
 janela_dx.geometry("300x600+850+50")  # Definir a posição da janela_dx
@@ -61,6 +65,10 @@ img_locomotivaLouca = Image.open(caminho + "\\imgs\\botoes\\cartao_trem_premium.
 img_locomotivaLouca = img_locomotivaLouca.resize((100, 100)) # definir o tamanho da imagem
 img_locomotivaLouca = ImageTk.PhotoImage(img_locomotivaLouca)
 
+img_valeTempestuoso = Image.open(caminho + "\\imgs\\botoes\\ovo.png")
+img_valeTempestuoso = img_valeTempestuoso.resize((100, 100)) # definir o tamanho da imagem
+img_valeTempestuoso = ImageTk.PhotoImage(img_valeTempestuoso)
+
 # Criar o botão
 btn_locomotivaLouca = tk.Button(janela_dx, image=img_locomotivaLouca, command=botao_locomotivaLouca)
 btn_locomotivaLouca.image = img_locomotivaLouca # Salvar a referência da imagem para evitar o garbage collection
@@ -78,8 +86,12 @@ btn_caverna_do_panico = tk.Button(janela_dx, image=img_caverna_do_panico, comman
 btn_caverna_do_panico.image = img_caverna_do_panico # Salvar a referência da imagem para evitar o garbage collection
 btn_caverna_do_panico.grid(row=8, column=1)
 
+btn_valeTempestuoso = tk.Button(janela_dx, image=img_valeTempestuoso, command=botao_valeTempestuoso)
+btn_valeTempestuoso.image = img_valeTempestuoso # Salvar a referência da imagem para evitar o garbage collection
+btn_valeTempestuoso.grid(row=9, column=0)
+
 btn_teste = tk.Button(janela_dx, command=teste)
-btn_teste.grid(row=9, column=1)
+btn_teste.grid(row=10, column=1)
 
 # Adicionar as checkboxes à janela_dx
 gemas_cb.grid(row=0, column=0)
